@@ -1,0 +1,101 @@
+.personalInfo {
+    padding: 10px;
+  }
+ 
+  .personalInfo h1 {
+    position: relative;
+    bottom: 20px;
+  }
+  .profileContainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30%;
+  }
+  
+  .profileContainer span {
+    font-size: 20px; /* 글씨 크기를 키웁니다 */
+    font-weight: bold; /* 글씨를 굵게 만듭니다 */
+  }
+
+
+  .profileInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 이미지와 버튼을 왼쪽 정렬 */
+    width: 900px; /* 이름과 닉네임 영역의 고정 너비 */
+  }
+  
+  .profileImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
+  .nickname{
+    font-size: 0.9em !important; /* 여기에서 원하는 크기로 설정하세요 */
+    color : #666; /* 필요에 따라 색상도 조절할 수 있습니다 */
+    margin-left: 10px;
+    width: 90px;
+  }
+  .username{
+    width: 70px;
+  }
+
+
+  .editButton {
+    background-color: #e1888b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 230px;
+    
+  }
+  .editButton:hover{
+    background-color: #ff4d4d;
+  }
+  
+  .editImgButton{
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 100px;
+  }
+  .editImgButton:hover {
+    background-color: #ff4d4d;
+  }
+  .editNickButton:hover{
+    background-color: #ff4d4d;
+  }
+  
+  .editNick{
+    border-radius: 6px;
+    justify-content: flex-start;
+  }
+
+  .editNickButton{
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  .hrLine {
+    width: 68%; /* hr 태그의 너비를 절반으로 설정 */
+    margin: 0;
+    border: none;
+    border-top: 1px solid #ccc; /* hr 모양을 유지하되 줄이 짧아지게 */
+    margin-top: 20px;
+  }
+  

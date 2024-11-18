@@ -1,0 +1,119 @@
+.main {
+  width: 960px;
+  height: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dropzone {
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #aaa;
+  width: 640px;
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+}
+.dropzone.dragging {
+  border-color: #000;
+  color: #000;
+}
+
+.dropzoneIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  color: var(--color-black);
+}
+
+.dropzoneBtn label {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  vertical-align: middle;
+  background-color: var(--color-sunset);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  height: 40px;
+}
+
+.dropzoneBtn input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+.preview {
+  position: relative;
+}
+
+.preview,
+.preview > img {
+  width: 640px;
+  height: 640px;
+}
+
+.leftArrow,
+.rightArrow {
+  position: absolute;
+  top: calc(50% - 16px);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: var(--font-4xl);
+  background-color: rgba(0, 0, 0, 0.7); /* 검은색 배경, 50% 투명도 */
+  display: flex;
+  align-items: center;
+}
+.leftArrow {
+  left: var(--space-sm);
+}
+.rightArrow {
+  right: var(--space-sm);
+}
+
+.addFeed {
+  width: 320px;
+  height: 100%;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.profileContainer {
+  width: 100%;
+  height: calc(40px + 2 * var(--space-sm));
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+}
+.profileImg,
+.profileImg > img {
+  width: 40px;
+  height: 40px;
+}
+.profileImg > img {
+  border-radius: 50%;
+}
+.profileNick {
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 40px - 2 * var(--space-md));
+  padding: var(--space-sm);
+  resize: none;
+  font-size: var(--font-md);
+  border: none;
+  outline: none;
+}

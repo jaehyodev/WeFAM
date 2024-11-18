@@ -1,0 +1,79 @@
+.toastContainer {
+  display: flex;
+  align-items: center;
+  /* 세로 중앙 정렬 */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+
+  left: 50%;
+  /* 수평 중앙 정렬 */
+  transform: translateX(-50%);
+  /* 중앙 정렬 보정 */
+  z-index: 9999;
+  background-color: white;
+  width: 400px;
+  border-left: 5px solid;
+}
+
+.success {
+  border-left-color: #28a745;
+  color: #28a745;
+
+  /* 성공 메시지 */
+}
+
+.error {
+  border-left-color: #dc3545;
+  color: #dc3545;
+  /* 오류 메시지 */
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+  /* 아이콘과 텍스트 사이 간격 */
+  display: flex;
+  align-items: center;
+  /* 아이콘을 중앙 정렬 */
+}
+
+.message {
+  flex: 1;
+  /* 메시지 영역 확장 */
+  display: flex;
+  flex-direction: column;
+  /* 텍스트 위아래 배치 */
+  justify-content: center;
+  /* 텍스트를 세로로 중앙 정렬 */
+}
+
+.message strong {
+  font-size: 16px;
+  margin-bottom: 5px;
+  /* 제목과 메시지 사이 간격 */
+}
+
+.message p {
+  margin: 0;
+  /* 불필요한 여백 제거 */
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  /* 닫기 버튼 크기 */
+  cursor: pointer;
+  color: #aaa;
+  margin-left: 10px;
+  /* 아이콘과 텍스트 사이 간격 */
+  display: flex;
+  align-items: center;
+  /* 버튼을 세로 중앙 정렬 */
+}
+
+.closeButton:hover {
+  color: #777;
+}

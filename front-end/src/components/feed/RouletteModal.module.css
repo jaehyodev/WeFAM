@@ -1,0 +1,112 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas {
+  transition: 2s;
+}
+.canvasContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.arrow {
+  margin-top: 100px;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 50px solid var(--color-sunset);
+  top: -115px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-20);
+}
+.rotateBtnContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.rotateBtn {
+  padding: 0;
+  width: 66px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-sunset);
+  color: var(--color-white);
+}
+.rotateBtn:hover {
+  background-color: var(--color-sunset-hover);
+}
+.rotateBtn.disabled {
+  background-color: var(--color-grey);
+  cursor: default;
+}
+.inputTitle {
+  width: 100%;
+  height: 38px;
+  margin: var(--space-md) 0;
+  border: none;
+  font-size: var(--space-md);
+}
+.inputTitle:focus {
+  outline: none;
+}
+
+.optionsContainer {
+  width: 100%;
+  margin-bottom: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+.option > input {
+  width: 100%;
+  height: 38px;
+  padding: var(--space-sm);
+  border: none;
+  background-color: #f8f8f8;
+  font-size: var(--space-md);
+}
+.option > input:focus {
+  outline: none;
+}
+.option > button {
+  display: flex;
+  align-items: center;
+}
+
+.deleteOptionBtn {
+  font-size: var(--space-md);
+}
+.deleteOptionBtn.disabled {
+  cursor: default;
+}
+.deleteOptionBtn.abled:hover {
+  color: var(--color-sunset-hover);
+}
+
+.addOptionBtn {
+  width: 100%;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  font-size: var(--space-md);
+}
+.addOptionBtn:hover {
+  color: var(--color-sunset-hover);
+}

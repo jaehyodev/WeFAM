@@ -1,0 +1,373 @@
+.board {
+  display: flex;
+  justify-content: center;
+}
+
+/* .board {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 12px;
+} */
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 6px;
+  width: 300px;
+  margin-left: 10px;
+}
+
+.column_header {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.column:first-child .column_header {
+  border-bottom: 3px solid #ff4d4d;
+  /* 첫 번째 컬럼의 하단 선 빨간색 */
+}
+
+.column:nth-child(2) .column_header {
+  border-bottom: 3px solid #ff9203;
+  /* 두 번째 컬럼의 하단 선 초록색 */
+}
+.column:nth-child(3) .column_header {
+  border-bottom: 3px solid #2ecc71;
+}
+
+.circleDaily,
+.circleShortTerm,
+.circleFinished {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+.circleDaily {
+  background-color: #ff4d4d;
+}
+
+.circleShortTerm {
+  background-color: #ff9203;
+}
+
+.circleFinished {
+  background-color: #2ecc71;
+}
+.circleZero {
+  color: white;
+}
+
+.taskList {
+  margin-top: 10px;
+  max-height: 595px;
+  overflow-y: auto;
+  /* 리스트가 5개 이상일 경우 스크롤 활성화 */
+}
+
+.taskItem {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.readMoreButton {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  float: right; /* 버튼을 오른쪽으로 배치 */
+}
+
+.taskContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  font-size: 15px;
+  max-width: 100%; /* 최대 너비를 100%로 설정 */
+  overflow-wrap: break-word; /* 단어가 길 경우 줄바꿈 */
+  word-wrap: break-word; /* 추가적으로 긴 단어 줄바꿈 */
+  white-space: normal; /* 줄바꿈을 허용 */
+}
+
+.taskTitle {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.taskDescription {
+  margin-bottom: 4px;
+  color: #000000;
+  font-size: 14px;
+}
+
+.taskUser {
+  font-size: 12px;
+  color: #999;
+}
+
+.taskPoints {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 12px;
+  /* 하단에 배치 */
+  right: 10px;
+  /* 우측에 배치 */
+  font-size: 14px;
+  color: #e74c3c;
+  /* 포인트의 색상을 빨간색으로 설정 */
+}
+
+.taskIcon {
+  position: absolute;
+  top: 12px;
+  /* 상단에 배치 */
+  right: 10px;
+  /* 우측에 배치 */
+  font-size: 1.1em;
+  color: #7c7c7c;
+  cursor: pointer;
+}
+
+.successIcon {
+  position: absolute;
+  top: 12px;
+  /* 상단에 배치 */
+  right: 10px;
+  /* 우측에 배치 */
+  font-size: 24px;
+  color: #7c7c7c;
+  cursor: pointer;
+}
+
+.add_task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+.imageContainer {
+  margin-bottom: 10px;
+}
+
+.taskImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.completedTask {
+  /* background-color: #c2c2c2; */
+  position: relative;
+}
+
+.missionicon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110px; /* 원하는 크기 설정 */
+  height: 110px; /* 원하는 크기 설정 */
+}
+
+.dropdownContainer {
+  display: flex;
+}
+
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 10;
+  animation: dropdownFadeIn 0.3s ease-in-out;
+}
+
+.dropdownMenu button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdownMenu button:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdownMenu button:focus {
+  outline: none;
+}
+
+.imageModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.imageModalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px; /* 화면 너비의 80% */
+  height: 500px; /* 화면 높이의 80% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden; /* 모달 밖으로 이미지가 넘치지 않도록 설정 */
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 세로 가운데 정렬 */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.imagePreviewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 이미지 비율을 유지하면서 모달 크기에 맞게 조정 */
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+}
+
+.closeButton:hover {
+  background-color: #c0392b;
+}
+
+.userContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 8px; */
+  margin-top: 5px;
+}
+
+.userProfile {
+  display: inline-block;
+  align-items: center;
+  position: relative;
+}
+
+.userImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: -8px;
+}
+
+/* .userName {
+  font-size: 14px;
+  color: #333;
+} */
+
+.completedDate {
+  font-size: 13px;
+  color: #727272;
+  margin-top: 5px;
+}
+
+/* 프로필 이름 (초기 숨김 상태) */
+.userName {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 65%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* 이미지에 호버할 때 이름 보이게 하기 */
+.userProfile:hover .userName {
+  display: block;
+  z-index: 100;
+}
+
+.Imgicon {
+  height: 16px;
+  width: 16px;
+  margin-left: 5px; /* 아이콘과 포인트 텍스트 사이 간격 추가 */
+}
+
+.leftAlignedButton {
+  margin-right: 10px; /* 원하는 만큼 왼쪽으로 조정 */
+  font-size: 0.9rem; /* 버튼 크기를 텍스트와 맞추기 위해 조정 */
+}

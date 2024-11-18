@@ -1,0 +1,44 @@
+/* main */
+.main {
+  position: absolute;
+  top: var(--header-height);
+  left: var(--leftSidebar-width);
+  width: calc(100% - var(--leftSidebar-width) - var(--rightSidebar-width));
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+  .main {
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 태블릿 세로 스타일 */
+  .main {
+    left: var(--leftSidebarSmall-width);
+    width: calc(100% - var(--leftSidebarSmall-width));
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* 태블릿 가로 스타일 */
+  .main {
+    left: var(--leftSidebarSmall-width);
+    width: calc(
+      100% - var(--leftSidebarSmall-width) - var(--rightSidebar-width)
+    );
+  }
+}
+@media (min-width: 1200px) {
+  /* 데스크탑 스타일 */
+  .main {
+    left: var(--leftSidebar-width);
+    width: calc(100% - var(--leftSidebar-width) - var(--rightSidebar-width));
+  }
+}

@@ -1,0 +1,155 @@
+.profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+  }
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modalTitle {
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  
+  .modalLabel {
+    font-weight: bold;
+    display: inline-block;
+    width: 120px; /* 레이블에 고정 너비를 줘서 이름, 생년월일, 닉네임 정렬 */
+    font-size: 20px;
+
+  }
+
+  .profile{
+    background-color: rgb(209, 223, 235);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    
+    
+  }
+  .profileInfoRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* 각 항목 사이에 간격 추가 */
+  }
+  
+  .profileInfoRow p{
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .modalInput {
+    width: 100%; /* 모든 입력 필드의 크기를 동일하게 설정 */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px; /* 동일한 폰트 크기 적용 */
+  }
+  
+  .modalInputText,
+  .modalInputDate {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px; /* 폰트 크기 통일 */
+  }
+  
+  .modalInputFile {
+    margin-bottom: 15px;
+  }
+  
+  .saveBtn, .closeBtn {
+    padding: 10px 15px;
+    background-color: #E1888B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .saveBtn:hover, .closeBtn:hover {
+    background-color: #D85156;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  
+  .emojiInputContainer {
+    width: 100%; /* 동일한 너비 설정 */
+    display: flex;
+    align-items: center;
+  }
+  
+
+
+  .what{
+    width: 100%;
+  }
+  
+  .emojiSelector {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .emojiPicker {
+    display: flex;
+    flex-direction: column; /* 가로 대신 세로 나열 */
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.2s ease-out; /* 애니메이션 적용 */
+    left: -40px;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .emoji {
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+  }

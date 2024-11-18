@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputTitle {
+  width: 100%;
+  height: 38px;
+  margin-bottom: var(--space-md);
+  border: none;
+  font-size: var(--space-md);
+}
+.inputTitle:focus {
+  outline: none;
+}
+
+.optionsContainer {
+  margin-bottom: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.inputOptionContainer {
+  background-color: var(--color-light-grey);
+}
+.option {
+  display: flex;
+  align-items: center;
+}
+.option input {
+  height: 38px;
+  padding: var(--space-sm);
+  border: none;
+  font-size: var(--space-md);
+}
+.option input:focus {
+  outline: none;
+}
+
+.option > button {
+  display: flex;
+  align-items: center;
+}
+
+/* AddPollModal.module.css */
+.option {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.option input[type="radio"] {
+  margin-left: var(--space-sm);
+}
+
+.voteCount {
+  position: absolute;
+  right: var(--space-xl);
+  color: var(--color-grey);
+}

@@ -1,0 +1,83 @@
+.chatbot__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative; /* X 버튼 위치를 위해 추가 */
+}
+
+/* 닫기 버튼 스타일 */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.chatbot__header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.chatbot__content {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.chatbot__content__box {
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot__footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.footer__input__container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input__container__type {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.input__container__sendBtn {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: var(--primary-color);
+  color: gray;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+  z-index: 100; /* 최상위로 설정 */
+}

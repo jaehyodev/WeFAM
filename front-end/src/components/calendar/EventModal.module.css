@@ -1,0 +1,321 @@
+/* 모달 창 전체 화면을 덮는 배경 */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 반투명 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* 모달 창의 내용 */
+.modal-content {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 580px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  position: relative;
+}
+
+/* 닫기 버튼 */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 모달 하단 취소 및 저장 버튼 */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancelButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #e9e9e9;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.saveButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.saveButton {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+/* 상세 설정 버튼 */
+.detailButton {
+  color: #ff4d4d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  align-items: center;
+}
+
+.detailContainer {
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+}
+
+.dateTimeSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dateTimeContainer {
+  display: flex;
+  align-items: center;
+}
+
+.dateInput,
+.timeInput {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 5px;
+  border-color: transparent;
+  margin: 0 3px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 105px;
+  text-align: center;
+}
+
+.dateInput {
+  width: 130px;
+  /* 날짜는 좀 더 넓게 */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  font-size: 20px !important;
+  color: #ff4d4d;
+  vertical-align: middle;
+  /* 아이콘과 텍스트가 수평으로 정렬되도록 */
+}
+
+.contentField {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 24px;
+  width: 100%;
+}
+
+.title {
+  border: transparent;
+  border-radius: 8px;
+  height: 32px;
+  /* background-color: #f9f9f9; */
+  flex-grow: 1;
+  margin-left: 35px;
+  font-size: 1.3rem;
+  align-items: center;
+}
+
+.previewIcon {
+  display: flex;
+  justify-content: center;
+  padding-right: 6px;
+}
+
+.ai {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.ai:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  font-size: 20px;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  /* Position the tooltip above the icon */
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.commonBox {
+  background-color: #f8f8f8;
+  /* 연한 회색 배경 */
+  border-radius: 3px;
+  /* 둥근 모서리 */
+  padding: 8px 12px;
+  /* 내용물 여백 */
+  color: #000000;
+  /* 텍스트 색상 */
+  width: 491.59px;
+  /* 넓이 */
+  height: 38px;
+  margin-right: 10px;
+  font-size: 16px;
+  /* 텍스트 크기 */
+  display: flex;
+  /* 플렉스 박스 사용 */
+  align-items: center;
+  /* 세로 정렬 */
+}
+
+.previewWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.fileNameWrapper {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  border: transparent;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.fileName {
+  margin-right: 8px;
+
+  color: #333;
+}
+
+.memoWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* 부모 요소의 크기에 맞춤 */
+  background-color: #f8f8f8;
+  border: transparent;
+  justify-content: space-between;
+  overflow: hidden; /* 넘치는 텍스트 숨김 처리 */
+}
+
+.memoText {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  flex-grow: 1;
+  /* 텍스트가 가능한 공간을 최대한 차지하게 함 */
+  width: 250px;
+  min-height: 38px;
+  /* 최소 높이 설정 (commonBox와 동일한 높이) */
+  padding: 8px 0px;
+  /* 클릭 가능한 영역을 더 넓게 설정 */
+  background-color: #f8f8f8;
+  /* 배경색을 추가해 클릭할 수 있는 영역을 강조 */
+  cursor: pointer;
+  /* 커서를 포인터로 변경해 클릭 가능하다는 힌트 제공 */
+  white-space: nowrap;
+  /* 자동 줄바꿈 방지 */
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.removeButton:hover {
+  color: red;
+}
+
+.preview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.preview img {
+  width: 100%;
+  height: auto;
+}
+
+.imgTextBox {
+  margin-left: 32px;
+  max-height: 110px;
+  overflow-y: scroll;
+}
+
+.aiBtn {
+  width: 60px;
+  /* 원하는 너비 */
+  height: 60px;
+  /* 원하는 높이 */
+  cursor: pointer;
+  /* 클릭 가능하게 포인터 변경 */
+  border-radius: 50%;
+}

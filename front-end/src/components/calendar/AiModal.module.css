@@ -1,0 +1,115 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+/* 모달 창의 내용 */
+.modal-content {
+  position: relative;
+  padding: var(--space-lg);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001; /* 챗봇보다 위에 있게끔 */
+}
+
+.aimodal {
+  position: relative;
+  bottom: 180px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.themeContainer {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  gap: 20px; /* 테마 사이의 간격 */
+  flex-wrap: wrap; /* 여러 줄로 테마 배치 */
+  margin-bottom: 20px;
+}
+
+.theme {
+  width: 150px;
+  height: auto; /* 높이를 auto로 설정하여 텍스트 공간 확보 */
+  display: flex;
+  flex-direction: column; /* 이미지와 텍스트를 수직으로 배치 */
+  align-items: center; /* 수직 정렬 */
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.themeImage {
+  width: 140px;
+  height: 140px;
+  padding: 6px;
+  border-radius: 50%; /* 이미지를 동그랗게 만듦 */
+  object-fit: cover; /* 이미지 크기에 맞춰 잘라내기 */
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* 애니메이션 추가 */
+}
+
+.themeName {
+  margin-top: 16px; /* 이미지와 이름 사이 간격 */
+  font-size: 20px;
+  text-align: center;
+
+  color: #333;
+}
+
+.themeImage:hover {
+  transform: scale(1.05);
+}
+
+.selected .themeImage {
+  background-color: var(--color-sunset);
+  color: white;
+  border-color: var(--color-sunset);
+  /* box-shadow: 0 0 40px var(--color-sunset);  */
+  /* 그림자 효과 */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.completeButton,
+.cancelButton {
+  background-color: var(--color-sunset);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.cancelButton {
+  color: var(--color-sunset);
+  background-color: #ffffff;
+  border: 1px solid #e9e9e9;
+}
+
+.completeButton:hover {
+  background-color: var(--color-sunset-hover);
+}
+
+.themeHead h1 {
+  color: black;
+  margin-bottom: 30px;
+  text-align: center;
+}

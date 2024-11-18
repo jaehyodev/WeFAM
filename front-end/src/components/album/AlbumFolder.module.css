@@ -1,0 +1,529 @@
+.album {
+  width: 960px;
+  min-height: 830px;
+  background-color: var(--color-white);
+  margin: var(--space-xl) 0;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+  .album {
+    width: 90%;
+  }
+}
+
+.header {
+  width: 100%;
+  height: calc(80px + var(--space-md));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-4xl);
+  font-weight: var(--weight-bold);
+}
+.header .title {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  gap: var(--space-sm);
+}
+.header .title h1 {
+  margin: 0;
+}
+.header .title img {
+  width: 40px;
+  height: 40px;
+}
+
+.controller {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.controller .selectController {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.controller .selectController p {
+  display: flex;
+  align-items: center;
+}
+.controller .manageController {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.controller .manageController button {
+  width: 30px;
+  padding: 0;
+}
+.selectBtn,
+.resetBtn {
+  background-color: var(--color-sunset);
+  width: 60px;
+  height: 30px;
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+}
+.dateInput {
+  width: 140px;
+  padding: 8px;
+  border-radius: 5px;
+  border-color: transparent;
+  background-color: #f9f9f9;
+  color: #333;
+}
+.selectBtn:hover,
+.resetBtn:hover {
+  background-color: var(--color-sunset-hover);
+}
+.btnDelete {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-2xl);
+}
+.btnAdd {
+  width: 60px;
+  font-size: medium;
+  color: #ffff;
+  border: 1px solid #8a8a8a;
+  background-color: #e1888b;
+  border-radius: 10px;
+}
+.btnPlus {
+  font-size: var(--font-2xl);
+  text-align: center;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btnDelete:hover,
+.btnPlus:hover {
+  color: var(--color-sunset-hover);
+}
+
+.selectAllContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--color-sunset); /* 체크박스의 색상 변경 */
+}
+
+.folderContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.slider {
+  position: absolute;
+}
+
+.folder {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 7px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  /* 부드러운 전환 효과 */
+}
+
+.folderCheckbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.folderModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.folderModal h1 {
+  text-align: center;
+}
+
+.folderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropzone {
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropzone p {
+  text-align: center;
+  color: #888;
+  margin-top: 50px;
+}
+
+.dropzone button {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 100%; /* 파일 아이템의 너비를 고정 */
+}
+
+.buttonContainer {
+  display: inline-flex; /* 버튼을 옆으로 나란히 배치 */
+  gap: 8px; /* 버튼 사이의 간격 */
+  align-items: center; /* 버튼을 수직 가운데 정렬 */
+  white-space: nowrap; /* 버튼이 줄바꿈되지 않도록 설정 */
+}
+
+.fileItem button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.fileItem button:last-child {
+  margin-left: 10px;
+}
+
+.modalButton {
+  display: block;
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 8px 20px; /* 버튼 크기 */
+  font-size: 16px; /* 텍스트 크기 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  background-color: #e1888b; /* 배경색 */
+  border: none; /* 테두리 없음 */
+  color: white; /* 텍스트 색상 */
+  cursor: pointer; /* 포인터 커서 */
+  width: 150px; /* 고정된 너비 */
+}
+
+.inputButton {
+  margin-left: auto;
+  margin-right: 10px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.imageModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* 너비를 고정된 퍼센티지로 설정 */
+  max-width: 800px; /* 최대 너비를 설정 */
+  height: 80%; /* 높이를 고정된 퍼센티지로 설정 */
+  max-height: 600px; /* 최대 높이를 설정 */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 모달이 넘치지 않도록 설정 */
+}
+
+.imageModalContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 이미지가 넘칠 경우 스크롤 가능하게 설정 */
+}
+
+.modalImage {
+  max-width: 90%; /* 모달의 너비에 맞게 이미지 크기 조정 */
+  max-height: 100%; /* 모달의 높이에 맞게 이미지 크기 조정 */
+  object-fit: contain; /* 이미지의 비율을 유지하면서 크기 조정 */
+}
+
+.imageModalContent button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* 애니메이션 추가 */
+}
+/* 마우스를 올렸을 때 왼쪽 버튼 애니메이션 */
+.leftimageModalContent:hover {
+  opacity: 1;
+  transform: translateX(20px); /* 왼쪽에서 오른쪽으로 이동 */
+}
+
+/* 마우스를 올렸을 때 오른쪽 버튼 애니메이션 */
+.rightimageModalContent:hover {
+  opacity: 1;
+  transform: translateX(-20px); /* 오른쪽에서 왼쪽으로 이동 */
+}
+
+.previewArea {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  position: relative;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .folder {
+    width: 150px;
+    height: 150px;
+  }
+
+  .slideButtons {
+    top: 3px;
+    right: 3px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .folder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .slideButtons {
+    top: 2px;
+    right: 2px;
+    padding: 6px;
+  }
+}
+
+.slideButtons button:hover {
+  opacity: 1;
+}
+
+.imageGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4개의 열로 변경 */
+  gap: 10px; /* 이미지 간격 */
+  grid-auto-rows: 1fr; /* 자동으로 동일한 높이의 행을 생성 */
+  place-items: center;
+}
+
+.imageGrid img {
+  width: 100%; /* 그리드 셀의 너비에 맞춤 */
+  height: 100%; /* 그리드 셀의 높이에 맞춤 */
+  object-fit: cover; /* 이미지를 셀 크기에 맞게 조절 */
+  display: block; /* 이미지의 기본 블록 레벨 동작 */
+}
+
+/* 버튼 공통 스타일 */
+.navigateButton {
+  position: absolute;
+  color: white;
+  background-color: dimgray;
+  /* top: calc(50% -15px); */
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease; /* 부드러운 전환 효과 */
+}
+.disabled {
+  background-color: #ccc; /* 회색 배경 */
+  cursor: not-allowed; /* 커서 변경 */
+  opacity: 0.5; /* 투명도 조정 */
+}
+.leftButton {
+  position: absolute;
+  left: calc(-1 * var(--space-lg));
+  transition: transform var(--animation-duration) ease,
+    color var(--animation-duration) ease;
+}
+
+.leftButton.abled:hover {
+  background-color: black;
+}
+
+.rightButton {
+  position: absolute;
+  right: calc(-1 * var(--space-lg));
+  transition: transform var(--animation-duration) ease,
+    color var(--animation-duration) ease;
+}
+
+.rightButton.abled:hover {
+  background-color: black;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+  .imageGrid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 화면 너비가 1200px 이하일 때 4개의 열 */
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 태블릿 세로 스타일 */
+  .imageGrid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 화면 너비가 1200px 이하일 때 4개의 열 */
+  }
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+  /* 태블릿 가로 스타일 */
+  .imageGrid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 화면 너비가 1200px 이하일 때 4개의 열 */
+  }
+}
+@media (min-width: 1400px) {
+  /* 데스크탑 스타일 */
+  .imageGrid {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 화면 너비가 1400px 이하일 때 4개의 열 */
+  }
+}
+
+.addleftButton {
+  position: absolute; /* 절대 위치 */
+  top: 50%; /* 이미지의 중간에 위치하도록 */
+  left: 10px; /* 이미지 왼쪽에서 10px 떨어지게 */
+  transform: translateY(-50%); /* 수직으로 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경색 (투명한 검정) */
+  color: white; /* 글씨 색 흰색 */
+  border: none; /* 테두리 없음 */
+  padding: 10px; /* 버튼 내 여백 */
+  cursor: pointer; /* 마우스 포인터 변경 */
+}
+
+.addrightButton {
+  position: absolute; /* 절대 위치 */
+  top: 50%; /* 이미지의 중간에 위치하도록 */
+  right: 10px; /* 이미지 오른쪽에서 10px 떨어지게 */
+  transform: translateY(-50%); /* 수직으로 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.5); /* 배경색 (투명한 검정) */
+  color: white; /* 글씨 색 흰색 */
+  border: none; /* 테두리 없음 */
+  padding: 10px; /* 버튼 내 여백 */
+  cursor: pointer; /* 마우스 포인터 변경 */
+}
+
+.addleftButton:hover,
+.addrightButton:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* 마우스 오버 시 배경색 조금 더 어둡게 */
+}

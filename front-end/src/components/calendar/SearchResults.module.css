@@ -1,0 +1,61 @@
+.searchResults {
+    position: absolute;
+    top: 105px;
+    right: 259px;
+    /* 검색창과 동일한 right 값 설정 */
+    width: 350px;
+    max-height: 0;
+    /* 처음에는 max-height를 0으로 설정 */
+    overflow-y: hidden;
+    /* 처음에는 스크롤을 숨깁니다 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+
+    opacity: 0;
+    /* 처음에는 투명하게 */
+    visibility: hidden;
+    /* 처음에는 보이지 않게 */
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    /* max-height와 opacity에 애니메이션 적용 */
+}
+
+.searchResults.active {
+    max-height: 300px;
+    /* 활성화되면 max-height를 300px로 설정 */
+    opacity: 1;
+    /* 불투명하게 설정 */
+    visibility: visible;
+    /* 보이게 설정 */
+    overflow-y: auto;
+    /* 결과가 많아지면 스크롤 가능 */
+}
+
+.searchResults li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.searchResults li:hover {
+    background-color: #f0f0f0;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 12px;
+    color: gray;
+}
+
+.noResults {
+    padding: 10px;
+    color: gray;
+}

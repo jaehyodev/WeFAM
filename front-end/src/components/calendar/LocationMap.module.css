@@ -1,0 +1,8 @@
+.mapContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    background-color: white;
+    /* 지도 배경을 흰색으로 설정 */
+}

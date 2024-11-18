@@ -1,0 +1,77 @@
+  .personalInfo {
+    padding: 10px;
+  }
+ 
+  .personalInfo h1 {
+    position: relative;
+    bottom: 20px;
+  }
+  .profileContainer {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .profileContainer span {
+    font-size: 20px; /* 글씨 크기를 키웁니다 */
+    font-weight: bold; /* 글씨를 굵게 만듭니다 */
+  }
+
+
+  .profileInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    justify-content: flex-start; /* 이미지와 버튼을 왼쪽 정렬 */
+  }
+  
+  .profileImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .editButton {
+    background-color: #A0D6B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  }
+  
+  .editImgButton{
+    background-color: #A0D6B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 100px;
+  }
+  .editImgButton:hover {
+    background-color: #7cb342;
+  }
+  .editNickButton:hover{
+    background-color: #7cb342;
+  }
+  
+  .editNick{
+    border-radius: 6px;
+    justify-content: flex-start;
+  }
+
+  .editNickButton{
+    background-color: #A0D6B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+  }

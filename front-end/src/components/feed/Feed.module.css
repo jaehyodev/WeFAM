@@ -1,0 +1,37 @@
+.feed {
+  width: 640px;
+}
+
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+  .feed {
+    width: 90%;
+  }
+}
+.spinnerContainer {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid var(--color-grey);
+}
+.spinner {
+  position: absolute;
+  bottom: calc(var(--space-xl) / 2);
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  border: 5px solid var(--color-sunset);
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  z-index: 10000;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

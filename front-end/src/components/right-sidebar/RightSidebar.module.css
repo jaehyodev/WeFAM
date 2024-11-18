@@ -1,0 +1,172 @@
+.rightSidebar {
+  position: fixed;
+  top: 72px;
+  right: 0;
+  width: var(--rightSidebar-width);
+  height: 100%;
+  transition: all var(--animation-duration);
+  margin: 20px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 767px) {
+  /* 모바일 스타일 */
+  .rightSidebar {
+    right: calc(-1 * var(--rightSidebar-width));
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 태블릿 세로 스타일 */
+  .rightSidebar {
+    right: calc(-1 * var(--rightSidebar-width));
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* 태블릿 가로 스타일 */
+  .rightSidebar {
+    right: 0px;
+  }
+}
+@media (min-width: 1200px) {
+  /* 데스크탑 스타일 */
+  .rightSidebar {
+    right: 0px;
+  }
+}
+
+.onlineFamily {
+  position: relative;
+  border: none;
+  border-radius: 10px;
+  padding: 5% 10%;
+  box-shadow: 0px 12px 24.8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.rightSidebar {
+  padding: 5px;
+  width: 250px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  margin-top: 35px;
+  margin-right: 30px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.userList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.userImageContainer {
+  position: relative;
+  display: inline-block; /* 팝업 메뉴와 프로필 이미지가 함께 표시되도록 함 */
+  /* 상태 표시의 절대 위치를 설정할 기준으로 사용 */
+}
+
+.userImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  /* 자식 요소의 위치 기준으로 설정 */
+  cursor: pointer;
+}
+
+.crownIcon {
+  position: absolute;
+  top: -5px;
+  /* 이미지의 하단에 위치 */
+  left: -10px;
+  /* 이미지의 오른쪽 하단에 위치 */
+  width: 20px;
+  /* 원하는 크기로 조정 */
+  height: 20px;
+  /* transform: rotate(-45deg); */
+  /* 요소를 반시계 방향으로 45도 회전 */
+}
+
+.userName {
+  flex-grow: 1;
+}
+
+.status {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: gray;
+  /* 기본 배경색 */
+  position: absolute;
+  /* 이미지의 절대 위치로 설정 */
+  bottom: 0;
+  /* 하단에 위치 */
+  right: 5px;
+  /* 우측에 위치 */
+  border: 2px solid white;
+  /* 상태 표시를 더 눈에 띄게 하기 위해 흰색 테두리 추가 */
+}
+
+.online {
+  background-color: green;
+}
+
+.offline {
+  background-color: red;
+}
+
+.popupMenu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  list-style: none;
+  width: 150px;
+  overflow: hidden; /* 슬라이드 애니메이션을 위해 숨기기 */
+  max-height: 0; /* 기본적으로 메뉴가 접힌 상태 */
+  transition: max-height 0.3s ease-in-out, opacity 0.6s ease-in-out; /* 슬라이드 애니메이션 */
+  transform-origin: top;
+  z-index: 1000000;
+  opacity: 0;
+  transform: scaleY(0);
+  margin-top: 20px;
+}
+
+.popupMenu.open {
+  opacity: 1;
+  transform: scaleY(1); /* 클릭 시 팝업이 수직으로 열리는 애니메이션 */
+  max-height: 500px;
+}
+
+.popupMenuItem {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  text-align: center;
+}
+
+.popupMenuItem:hover {
+  background-color: #f1f1f1;
+}
+
+.popupMenuItem:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,41 @@
+.search-input {
+  position: absolute;
+  top: 60px;
+  right: 115px;
+  width: 0px;
+  /* 처음에 검색창을 숨깁니다. */
+  height: 40px;
+  /* 버튼과 동일한 높이로 설정 */
+  transition: width 0.3s ease, opacity 0.3s ease;
+  /* 애니메이션으로 크기와 투명도 변경 */
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  opacity: 0;
+  /* 처음에 투명하게 */
+  z-index: 100;
+}
+
+.search-input.active {
+  width: 350px;
+  /* 검색창이 넓어질 때의 크기 */
+  opacity: 1;
+  /* 검색창이 나타나게 */
+}
+
+.search-button {
+  display: flex;
+  align-items: center;
+  /* 아이콘을 중앙에 맞춤 */
+  justify-content: center;
+  height: 40px;
+  /* 버튼의 높이 설정 */
+  width: 40px;
+  /* 버튼의 너비 설정 */
+  border: none;
+  background-color: transparent;
+  /* 투명 배경 */
+  cursor: pointer;
+}

@@ -1,0 +1,334 @@
+.EventDetail {
+  position: absolute;
+  top: 80px;
+  right: calc(-1 * var(--EventDetail-width));
+  width: var(--EventDetail-width);
+  height: 89%;
+  background-color: var(--color-white);
+  transition: all var(--animation-duration);
+  border: 1px solid beige;
+  border-radius: 8px;
+  overflow-y: auto;
+  z-index: 1000;
+
+  /* width와 opacity 애니메이션 */
+  opacity: 0; /* 처음에는 투명 */
+}
+.EventDetail.enter {
+  right: 0;
+  opacity: 1; /* 열릴 때 opacity 설정 */
+}
+
+.EventDetail.exit {
+  width: 0; /* 닫힐 때 width가 0으로 줄어듦 */
+  opacity: 0; /* 닫힐 때 opacity가 0으로 줄어듦 */
+}
+
+.header {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px;
+  margin-bottom: 10px; /* 추가: 헤더와 내용 사이의 간격 */
+}
+
+.title h2 {
+  margin: 0 20px;
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* margin-top: 10px;  */
+  /* 추가: 제목과 날짜 사이의 간격 */
+  padding: 14px 0px 20px;
+  border-bottom: 1px solid beige;
+  gap: 5px;
+  /* 아이콘과 날짜 시간 그룹 사이의 간격 */
+}
+
+.details.hasTime span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.details.noTime span {
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.content {
+  margin-top: 20px; /* 추가: 내용 부분의 여백 */
+  font-size: 1em;
+  color: var(--color-text);
+}
+
+.memoContainer {
+  border-top: 1px solid var(--color-border);
+  /* padding-top: 10px; */
+  /* padding-bottom: 10px; */
+  border-bottom: 1px solid beige;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-secondary);
+}
+
+.dateTime {
+  display: flex;
+  flex-direction: column; /* 날짜와 시간을 세로로 배치 */
+  align-items: center; /* 가운데 정렬 */
+}
+
+.startDate {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.startTime {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-text);
+}
+.endDate {
+  font-size: 0.8em;
+  color: var(--color-text);
+}
+
+.endTime {
+  font-size: 1.5em;
+  color: var(--color-text);
+}
+
+.ampm {
+  font-size: 0.75em;
+  /* 작은 크기 */
+  margin-left: 2px;
+  /* 시간과 약간의 간격 */
+}
+/* allDay일 때 스타일 */
+.allDay .startTime,
+.allDay .endTime,
+.allDay .ampm {
+  display: none;
+  /* 시간을 숨깁니다 */
+}
+
+.allDay .startDate,
+.allDay .endDate {
+  font-size: 1.2em;
+  /* allDay일 때 날짜 폰트 크기를 더 크게 설정 */
+  font-weight: bold;
+  /* 더 굵게 설정할 수도 있습니다 */
+  text-align: center;
+}
+
+.arrow {
+  font-size: 3em;
+}
+
+.smallArrow {
+  font-size: 2em;
+  /* 크기를 줄임 */
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  /* 수평 중앙 정렬 */
+  align-items: center;
+  /* 수직 중앙 정렬 */
+  height: 100px;
+  /* 부모 요소의 높이를 설정하세요 */
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.menu div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.menu div:hover {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  /* 텍스트 굵게 처리 */
+}
+
+.locationContainer {
+  /* 지도의 상단 여백 */
+  border-bottom: 1px solid beige;
+}
+
+.locationName {
+  font-weight: bold;
+  font-size: 16px;
+  /* 이름과 지도의 간격 */
+  text-align: center;
+  /* 가운데 정렬 */
+  padding-left: 5px;
+}
+.memoTitle {
+  font-weight: bold;
+  font-size: 16px;
+  /* 이름과 지도의 간격 */
+  text-align: center;
+  /* 가운데 정렬 */
+}
+
+.mapContainer {
+  width: 100%;
+  /* 지도가 컨테이너에 맞게 */
+  height: 200px;
+  /* 지도의 높이 지정 */
+  background-color: white;
+  /* 지도 배경을 흰색으로 설정 */
+  padding: 0 18px;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  margin: 5px 0;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+  color: rgb(143, 143, 143);
+  /* font-size: 20px !important; */
+  vertical-align: middle;
+  /* 아이콘과 텍스트가 수평으로 정렬되도록 */
+}
+
+.profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profileImageWrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.profileImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nicknameTooltip {
+  visibility: hidden;
+  /* 기본 상태에서는 보이지 않음 */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* 배경색 설정 */
+  color: #fff;
+  /* 텍스트 색상 */
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -30px;
+  /* 이미지 아래에 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profileImageWrapper:hover .nicknameTooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* EventDetail.module.css */
+
+.sliderContainer {
+  width: 100%;
+  max-width: 310px;
+  /* 슬라이더의 최대 너비 설정 */
+  margin: 0 auto;
+  justify-content: center;
+  /* overflow: hidden; */
+  /* 슬라이더 내부의 넘침 방지 */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  padding: 0 18px;
+  /* 이미지의 최대 높이 조정 */
+  object-fit: contain;
+  /* 이미지 비율을 유지하면서 크기 조정 */
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* 슬라이드 내부의 넘침 방지 */
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #ff4d4d;
+  /* 호버 시 색상 변경 */
+}
