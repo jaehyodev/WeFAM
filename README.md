@@ -12,6 +12,11 @@
 
 <br>
 
+## 🎞 시연 영상
+<a target="_blank" href="https://www.youtube.com/watch?v=FPtgebMCurQ">시연 영상 보기</a>
+
+<br>
+
 ## ⭐ 주요 기능
 * 피드(SNS)
 * 일정(달력)
